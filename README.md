@@ -1,6 +1,4 @@
-from pathlib import Path
-
-content = """# 🏥 HealthCare System
+### 🏥 HealthCare System
 
 A simple Hospital Management System built with Django that allows managing doctors, patients, and appointments in an easy and organized way.
 
