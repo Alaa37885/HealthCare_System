@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">🏥 HealthCare</div>
+
+    <div class="nav-links">
+        <a href="/doctors/">Doctors</a>
+        <a href="/book/">Booking</a>
+        <a href="/appointments/">Appointments</a>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1 class="title">📋 Appointments</h1>
+
+    <div class="cards">
+
+        {% for app in appointments %}
+        <div class="card">
+
+            <div class="doctor-name">
+                👨‍⚕️ Dr. {{ app.doctor.user.username }}
+            </div>
+
+            <div class="specialty">
+                🧑 Patient: {{ app.patient.user.username }}
+            </div>
+
+            <div class="specialty">
+                📅 {{ app.date }}
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

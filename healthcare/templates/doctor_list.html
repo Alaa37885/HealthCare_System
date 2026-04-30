@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">🏥 HealthCare</div>
+
+    <div class="nav-links">
+        <a href="/doctors/">Doctors</a>
+        <a href="/book/">Booking</a>
+        <a href="/appointments/">Appointments</a>
+    
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1 class="title">👨‍⚕️ Doctors</h1>
+
+    <form method="GET" class="search-box">
+        <input type="text" name="specialty" placeholder="Search specialty...">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- COMPACT GRID -->
+    <div class="cards">
+
+        {% for doctor in doctors %}
+        <div class="card">
+
+            <!-- TOP ROW -->
+            <div class="top-row">
+
+                <div class="doctor-name">
+                    👨‍⚕️ Dr. {{ doctor.user.username }}
+                </div>
+
+                <div class="status {% if doctor.is_available %}available{% else %}not{% endif %}">
+                    {% if doctor.is_available %}Available{% else %}Booked{% endif %}
+                </div>
+
+            </div>
+
+            <!-- SECOND ROW (compact) -->
+            <div class="specialty-row">
+                🩺 {{ doctor.specialty }}
+            </div>
+
+            <!-- ACTION -->
+            <div class="action">
+                {% if doctor.is_available %}
+                    <a href="/book/?doctor={{ doctor.id }}" class="btn">Book</a>
+                {% else %}
+                    <button class="btn disabled" disabled>Booked</button>
+                {% endif %}
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

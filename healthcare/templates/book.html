@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">🏥 HealthCare</div>
+
+    <div class="nav-links">
+        <a href="/doctors/">Doctors</a>
+        <a href="/book/">Booking</a>
+        <a href="/appointments/">Appointments</a>
+    
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1 class="title">📅 Book Appointment</h1>
+
+    <!-- SUCCESS / ERROR -->
+    {% if success %}
+        <div class="msg success">{{ success }}</div>
+    {% endif %}
+
+    {% if error %}
+        <div class="msg error">{{ error }}</div>
+    {% endif %}
+
+    <!-- FORM -->
+    <div class="form-card">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Doctor -->
+            <label>Doctor</label>
+            <select name="doctor" class="input">
+
+                {% for doctor in doctors %}
+                <option value="{{ doctor.id }}"
+                    {% if doctor.id|stringformat:"s" == selected_doctor %}selected{% endif %}>
+                    👨‍⚕️ Dr. {{ doctor.user.username }} - {{ doctor.specialty }}
+                </option>
+                {% endfor %}
+
+            </select>
+
+            <!-- Patient -->
+            <label>Patient</label>
+            <select name="patient" class="input">
+
+                {% for patient in patients %}
+                <option value="{{ patient.id }}">
+                     {{ patient.user.username }}
+                </option>
+                {% endfor %}
+
+            </select>
+
+            <!-- Date -->
+            <label>Date & Time</label>
+            <input type="datetime-local" name="date" class="input">
+
+            <!-- Button -->
+            <button type="submit" class="btn full">
+                Book Appointment
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
