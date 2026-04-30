@@ -99,11 +99,11 @@ python manage.py runserver
 
 ## 👩‍💻 Author
 
-A'laa Omar
-Aya Karam 
-Amira Emad 
-Malak Mohammed
-Mariam Ashraf
+| A'laa Omar |
+Aya Karam |
+Amira Emad |
+Malak Mohammed |
+Mariam Ashraf |
 
 
 ---
