@@ -82,7 +82,7 @@ python manage.py runserver
 
 ## 📸 UI Preview
 
-- ![Interface](Result_img.png)
+- ![Interface](Interface.png)
 
 
 ---
