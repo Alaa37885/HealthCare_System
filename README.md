@@ -25,6 +25,7 @@ A simple Hospital Management System built with Django that allows managing docto
 ---
 
 ## 📂 Project Structure
+```bash
 
 HealthCare_System/
 │
@@ -42,7 +43,7 @@ HealthCare_System/
 │
 ├── db.sqlite3
 ├── manage.py
-
+```
 ---
 
 ## ⚙️ Installation & Setup
