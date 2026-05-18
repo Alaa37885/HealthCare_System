@@ -25,24 +25,45 @@ A simple Hospital Management System built with Django that allows managing docto
 ---
 
 ## 📂 Project Structure
-```bash
+## Project Structure
 
-HealthCare_System/
+```text
+project-root/
 │
-├── app/
+├── healthcare/
+│   ├── migrations/
+│   │   ├── __pycache__/
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   │
+│   ├── templates/
+│   │
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
 │   ├── models.py
-│   ├── views.py
+│   ├── tests.py
 │   ├── urls.py
-│   └── templates/
+│   └── views.py
+│
+├── project/
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 │
 ├── static/
-│   └── images/
-│       ├── doctors.png
-│       ├── book.png
-│       └── appointments.png
+│   └── css/
+│       └── style.css
 │
+├── interface.png
+├── README.md
 ├── db.sqlite3
+├── doctors_data.py
 ├── manage.py
+└── patients_data.py
 ```
 ---
 
